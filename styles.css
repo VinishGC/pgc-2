@@ -1,5 +1,7 @@
 /* Base Styles */
 
+
+
 .cards {
   display: flex;
   gap: 20px;          /* spacing between cards */
@@ -31,6 +33,42 @@
 .card h3 {
   padding: 15px;
 }
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;        /* 🔥 enables horizontal scroll */
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+.cards-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+  background: #6c63ff;
+  border-radius: 10px;
+}
+
+.card {
+  min-width: 300px;        /* IMPORTANT */
+  background: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  flex-shrink: 0;          /* 🔥 prevents shrinking */
+}
+
+
+.cards-container {
+  scroll-snap-type: x mandatory;
+}
+
+.card {
+  scroll-snap-align: start;
+}
+
 
 :root {
     --primary: #00f0ff;
@@ -1511,3 +1549,4 @@ footer {
     padding: 20px;
 
 }
+
